@@ -6,9 +6,18 @@ let student = [
   { name: "Ravi", age: 24, city: "Banglore", salary: 60000 },
 ];
 
-const newArrays = student.filter((item, index, student) => {
-  if (item.age % 2 === 0) return true;
-  else return false;
+// const newArrays = student.filter((item, index, student) => {
+//   if (item.age % 2 === 0) return true;
+//   else return false;
+// });
+
+// console.log(newArrays);
+
+const names = student.map((item, index, student) => {
+  return `<li>${item.name}</li>`;
 });
 
-console.log(newArrays);
+console.log(names);
+
+const div = document.getElementById(".container");
+div.innerHTML = `<ul>${names.join("")}</ul>`;
